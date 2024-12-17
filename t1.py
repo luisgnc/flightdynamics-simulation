@@ -1,9 +1,8 @@
 import sympy as sp
 from sympy import pretty_print
 
-
 # Constantes
-a, b, c, d, e = 5, 1, -5, 8, 7
+a, b, c, d, e = -12, 10, 5, 11, 4
 x1, x2, x3, x4 = sp.symbols('x1 x2 x3 x4')
 u1, u2 = sp.symbols('u1 u2')
 
