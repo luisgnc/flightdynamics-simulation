@@ -82,11 +82,24 @@ for k, v in controlval.items():
     print(f"{k} = {v}")
 
 
-# Modelo Linearizado
 x_dot = sp.Matrix([x1_dot, x2_dot, x3_dot, x4_dot])
 x_dot = A*x_symbol + B*u_symbol
 
 print(controlval)
+
+# Matriz de Contrabilidade
+controllability_blocks = [B]
+for i in range(1, A.shape[0]):
+    controllability_blocks.append(A @ controllability_blocks[-1])
+
+# Concatena horizontalmente todos os blocos para formar Delta
+Delta = sp.Matrix.hstack(*controllability_blocks)
+
+sp.pretty_print(Delta)
+if A.shape[0] == Delta.rank():
+    print(f"\nO sistema é controlável. n = {A.shape[0]} , , caract(Delta) = {Delta.rank()}")
+else:
+    print(f"\nO sistema não é controlável.")
 
 '''
     new = list()
