@@ -21,7 +21,8 @@ B = sp.Matrix([[0.0673, 0.0218],
               [0, 0],
               [0, -0.0374]])
 C = sp.Matrix([[1, 0, 0, 0],
-              [0, 1, 0, 0]])
+              [0, -1, 1, 0],
+               [0, 0, 0, 1]])
 vp_A = sp.Matrix(A).eigenvals()
 
 # Lista do tipo [Real1, Imaginario1][Real2, Imaginario 2]
@@ -77,3 +78,8 @@ if A.shape[0] == Delta.rank():
     print(f"\nO sistema é controlável. n = {A.shape[0]} , , caract(Delta) = {Delta.rank()}")
 else:
     print(f"\nO sistema não é controlável.")
+
+if A.shape[0] == Gamma.rank():
+    print(f"\nO sistema é observável. n = {A.shape[0]} , , caract(Gamma) = {Gamma.rank()}")
+else:
+    print(f"\nO sistema não é observável.")

@@ -70,3 +70,8 @@ if A.shape[0] == Delta.rank():
     print(f"\nO sistema é controlável. n = {A.shape[0]} , , caract(Delta) = {Delta.rank()}")
 else:
     print(f"\nO sistema não é controlável.")
+
+if A.shape[0] == Gamma.rank():
+    print(f"\nO sistema é observável. n = {A.shape[0]} , , caract(Gamma) = {Gamma.rank()}")
+else:
+    print(f"\nO sistema não é observável.")
