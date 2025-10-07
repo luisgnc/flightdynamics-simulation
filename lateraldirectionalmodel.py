@@ -26,7 +26,7 @@ C = sp.Matrix([[1, 0, 0, 0],
               [0, 1, 0, 0]])
 
 vp_A = sp.Matrix(A).eigenvals()
-# Lista do tipo [Real1, Imaginario1][Real2, Imaginario 2]
+# Lista do tipo [Real1, Imaginario1][Real2, Imaginario2]
 vp_A_lista = [[-3.39334582954197, 0],[-0.465628973363563, -0.678870059572729], [-0.0853962237309086,0],
         [-0.465628973363563, 0.678870059572729]]
 print(vp_A_lista)
@@ -67,11 +67,11 @@ print("Matriz de Observabilidade")
 sp.pretty_print(Gamma)
 
 if A.shape[0] == Delta.rank():
-    print(f"\nO sistema é controlável. n = {A.shape[0]} , , caract(Delta) = {Delta.rank()}")
+    print(f"\nO sistema e controlavel. n = {A.shape[0]} , , caract(Delta) = {Delta.rank()}")
 else:
-    print(f"\nO sistema não é controlável.")
+    print(f"\nO sistema nao e controlavel.")
 
 if A.shape[0] == Gamma.rank():
-    print(f"\nO sistema é observável. n = {A.shape[0]} , , caract(Gamma) = {Gamma.rank()}")
+    print(f"\nO sistema e observavel. n = {A.shape[0]} , , caract(Gamma) = {Gamma.rank()}")
 else:
-    print(f"\nO sistema não é observável.")
+    print(f"\nO sistema nao e observavel.")

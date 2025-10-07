@@ -47,9 +47,9 @@ for chave, valor in vp_A.items():
 for k, v in controlval.items():
     if 'Tp' in k:
         if v > 10:
-            print('\nMovimento Fugóide')
+            print('\nMovimento Fugoide')
         else:
-            print('\nMovimento de Período Curto')
+            print('\nMovimento de Periodo Curto')
     print(f"{k} = {v}")
 
 x_dot = sp.Matrix([x1_dot, x2_dot, x3_dot, x4_dot])
@@ -71,15 +71,16 @@ Gamma = sp.Matrix.vstack(*observability_blocks)
 
 print("Matriz de Controlabilidade")
 sp.pretty_print(Delta)
+print("\n\n")
 print("Matriz de Observabilidade")
 sp.pretty_print(Gamma)
 
 if A.shape[0] == Delta.rank():
-    print(f"\nO sistema é controlável. n = {A.shape[0]} , , caract(Delta) = {Delta.rank()}")
+    print(f"\nO sistema e controlavel. n = {A.shape[0]} , , caract(Delta) = {Delta.rank()}")
 else:
-    print(f"\nO sistema não é controlável.")
+    print(f"\nO sistema nao e controlavel.")
 
 if A.shape[0] == Gamma.rank():
-    print(f"\nO sistema é observável. n = {A.shape[0]} , , caract(Gamma) = {Gamma.rank()}")
+    print(f"\nO sistema e observavel. n = {A.shape[0]} , , caract(Gamma) = {Gamma.rank()}")
 else:
-    print(f"\nO sistema não é observável.")
+    print(f"\nO sistema nao e observavel.")
